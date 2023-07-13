@@ -1,0 +1,16 @@
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.select-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 45%;
+  right: 2.5px;
+  transform: translateY(-10%);
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 9px solid #0d4c92; /* Change the color as needed */
+  pointer-events: none;
+}

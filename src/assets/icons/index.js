@@ -1,0 +1,25 @@
+export { default as bluePc } from './blue-pc.png';
+export { default as blackPc } from './black-pc.png';
+export { default as dt1pc } from './dt1-pc.png';
+export { default as dt2pc} from './dt2-pc.png';
+export { default as dt3pc} from './dt3-pc.png';
+export { default as dt4pc} from './dt4-pc.png';
+export { default as dtBlackCrm} from './dtBlack-crm.png';
+export { default as dtBlueCrm} from './dtBlue-crm.png';
+export { default as dt2blackCrm} from './dt2black-crm.png';
+export { default as dt2blueCrm} from './dt2blue-crm.png';
+export { default as blueMarket} from './blue-market.png';
+export { default as blackMarket} from './black-market.png';
+export { default as dtMarket} from './dt-market.png';
+export { default as blackPhone} from './black-phone.png';
+export { default as bluePhone} from './blue-phone.png';
+export { default as dt1phone} from './dt1-phone.png';
+export { default as dt2phone} from './dt2-phone.png';
+
+export { default as tg} from './tg.png';
+export { default as i18next} from './i18next.png';
+export { default as call} from './call.png';
+export { default as crmicon} from './CRM icon.png';
+export { default as uz} from './icons8-uzbekistan-96.png';
+export { default as ru} from './icons8-russian-federation-96.png';
+export { default as en} from './icons8-great-britain-96.png';
