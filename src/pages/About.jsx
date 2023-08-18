@@ -6,6 +6,7 @@ import "./About.css";
 import { logoSmall } from "../assets/images";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 const About = () => {
   const { t } = useTranslation();
@@ -54,7 +55,10 @@ const About = () => {
 
   return (
     <>
-      {/* Web-site start  */}
+      <Helmet>
+        <title>About UIS TEAM</title>
+        <meta name="description" content="" />
+      </Helmet>
 
       <div className="flex justify-center items-center flex-wrap mx-auto my-10">
         <section className="flex flex-col gap-2">

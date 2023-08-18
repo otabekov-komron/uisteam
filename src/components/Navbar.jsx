@@ -1,23 +1,23 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { logo } from "../assets/images";
+import { i18next } from "../assets/icons";
+import { useTranslation } from "react-i18next";
 import FlagEn from "../assets/icons/icons8-great-britain-96.png";
 import FlagRu from "../assets/icons/icons8-russian-federation-96.png";
 import FlagUz from "../assets/icons/icons8-uzbekistan-96.png";
-import { i18next } from "../assets/icons";
-import { useTranslation } from "react-i18next";
-import listenForOutsideClicks from "../utils/listen-for-outside-clicks";
 
+import useClickOutside from "../utils/detect";
 const Navbar = () => {
   const { i18n, t } = useTranslation();
-  const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef();
-  const menuref = useRef(null);
-  const [listening, setListening] = useState(false);
-  useEffect(
-    listenForOutsideClicks(listening, setListening, menuref, setIsOpen)
-  );
+
   const hiddenRef = useRef();
+  let [open, setOpen] = useState(false);
+  const wrapperRef = useRef("menu");
+  useClickOutside(wrapperRef, () => {
+    setOpen(false);
+  });
 
   const [selectedLanguage, setSelectedLanguage] = useState("en");
   const languages = [
@@ -29,11 +29,11 @@ const Navbar = () => {
   const selectLanguage = (languageCode) => {
     setSelectedLanguage(languageCode);
     i18n.changeLanguage(languageCode);
-    setIsOpen(false);
+    setOpen(false);
   };
 
   const toggleDropdown = () => {
-    setIsOpen(!isOpen);
+    setOpen(!open);
   };
 
   const showNavbar = () => {
@@ -62,10 +62,13 @@ const Navbar = () => {
           <img className="lg:w-24 xs:w-14 " src={logo} alt="" />
         </Link>
 
-        <div className="relative">
+        <div
+          ref={wrapperRef}
+          className="relative"
+          onClick={() => setOpen(!open)}
+        >
           <div
             className="flex items-center cursor-pointer"
-            ref={menuref}
             onClick={toggleDropdown}
           >
             <img
@@ -76,7 +79,7 @@ const Navbar = () => {
               className="w-6 h-6 rounded-full mr-2"
             />
           </div>
-          {isOpen && (
+          {open && (
             <ul className="flex flex-col items-center justify-center absolute z-10 mt-2 py-1  bg-secondary rounded shadow">
               {languages.map((language) => (
                 <li

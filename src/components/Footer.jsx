@@ -83,9 +83,9 @@ const Footer = () => {
         </div>
       </div>
       <div className="xs:text-center lg:text-start flex xs:flex-col-reverse xs:gap-4 lg:flex-row items-center pt-5 lg:px-20 justify-between">
-        <h1 className=" xs:pt-4 -mb-4 xs:text-xs xs::text-[10px] lg:text-base xs:border-t-2 lg:border-none">
+        <a href="https://ok-web.uz" className=" xs:pt-4 -mb-4 xs:text-xs xs::text-[10px] lg:text-base xs:border-t-2 lg:border-none">
           {t("copyright")}
-        </h1>
+        </a>
         <a
           href="https://goo.gl/maps/CCJvETBxjMQjLEyx8?coh=178572&entry=tt"
           className="border-2 p-2 rounded-lg hover:text-secondary hover:bg-white font-medium xs:text-sm lg:text-base"
