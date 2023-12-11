@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { lazy } from "react";
 import ScrollToTop from "./utils/ScrollToTop";
+import JivoChatWidget from "./components/JivoChatWidget"
 
 const Home = lazy(() => import("./pages/Home"));
 const Services = lazy(() => import("./pages/Services"));
@@ -34,6 +35,7 @@ function App() {
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <JivoChatWidget/>
     </>
   );
 }
